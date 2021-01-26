@@ -1,11 +1,11 @@
-import serial
-ser = serial.Serial('/dev/ttyS0', 115200)
+from serialwrapper import SerialWrapper
 
-message = '1'
-message = message.encode()
+SerialWrapper.begin('/dev/ttyS0', 115200)
+
+message = 'a'
 
 while True:
-    ser.write(message)
+    SerialWrapper.send([message])
 
-    receive = ser.read().decode()
+    receive = SerialWrapper.receive()
     print(receive)
