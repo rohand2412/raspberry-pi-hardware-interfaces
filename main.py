@@ -14,9 +14,11 @@ def main():
     while True:
         SerialWrapper.send(message)
 
-        receive, item_num = SerialWrapper.receive(packet)
-        if isinstance(receive, np.ndarray):
-            print(receive[:item_num])
+        data = SerialWrapper.receive(packet)
+        if not isinstance(data, int):
+            packet = data[0]
+            size = data[1]
+            print(packet[:size])
 
 if __name__ == '__main__':
     main()
