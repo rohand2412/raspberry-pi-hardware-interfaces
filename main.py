@@ -8,7 +8,7 @@ def main():
     """Demonstrates correct usage of serialwrapper library"""
     SerialWrapper.begin('/dev/ttyS0', 115200)
 
-    message = [0, 1, 2, 3, 0x1d, 0x1f, 0x1e, 5, 6, 8]
+    message = [0, 1, 2, 3, 4, 5, 29, 30, 31, 256, -0, -1, -2, -3, -4, -5, -29, -30, -31, -256]
     packet = np.zeros(256, dtype=np.uint8)
 
     while True:
