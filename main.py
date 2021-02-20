@@ -2,7 +2,7 @@
 """Example code for serialwrapper library"""
 
 import numpy as np
-from serialwrapper import SerialWrapper
+from raspberry_pi_libraries import SerialWrapper
 
 def main():
     """Demonstrates correct usage of serialwrapper library"""
