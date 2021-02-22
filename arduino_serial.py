@@ -14,10 +14,8 @@ def main():
     while True:
         SerialWrapper.send(message)
 
-        data = SerialWrapper.receive(packet)
-        if not isinstance(data, int):
-            packet = data[0]
-            size = data[1]
+        packet, size = SerialWrapper.receive(packet)
+        if size > 0:
             print(packet[:size])
 
 if __name__ == '__main__':
