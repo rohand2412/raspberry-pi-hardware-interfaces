@@ -6,7 +6,7 @@ from raspberry_pi_libraries import SerialWrapper
 
 def main():
     """Demonstrates correct usage of serialwrapper library"""
-    SerialWrapper.begin('/dev/ttyS0', 115200)
+    SerialWrapper.begin('/dev/serial0', 115200)
 
     message = [-1, 0, 2, -3, 4, 20000, 29, 30, 31, 2147483647, -0, 1, -2, 3, -4, -5, -29, -30, -31, -2147483648]
     packet = np.zeros(256, dtype=np.int32)
